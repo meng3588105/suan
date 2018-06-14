@@ -2,6 +2,7 @@ package com.mmm;
 
 import org.junit.Assert;
 import org.junit.Test;
+import sun.security.krb5.internal.crypto.Des;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -25,6 +26,8 @@ public class Suan {
             if (2 * x + 4 * y == 120) {
                 System.out.println(x);
                 System.out.println(y);
+
+                
             }
         }
     }
@@ -390,13 +393,32 @@ public class Suan {
         }
         System.out.println(result);
 
+    }
 
+    @Test
+    public void test10(){
+        String str ="abc bcd  dvf asd  end";
+        String regex="\\s+";
+        str=str.trim();
+        String str1=str.replaceAll(regex,"");
+        System.out.println(str1);
+    }
+    @Test
+    public void test11(){
+        String str="ASD234";
+        System.out.println(str.matches("[A-Z]{1,3}[0-9]{1,5}"));
+    }
+    @Test
+    public void test12(){
 
-
-
+        String str ="aaaaa  2018-05-29 aaaaaaaadad";
+        String str1=  str.replaceAll("([0-9][4])-([0-9]{2})-([0-9]{2})","$2/$3 $1年");
+        System.out.println(str1);
 
 
     }
+
+
 
 
 
